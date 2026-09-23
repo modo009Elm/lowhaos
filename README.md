@@ -1,8 +1,8 @@
 # LowhaOS
 
-**An Android distribution that enforces the limits you set for yourself.**
+**Open-Source OS for android phones which limits/blocks social media and blocks all adult and gambling content/apps**
 
-LowhaOS is a [LineageOS](https://lineageos.org/) fork for the Fairphone 6. You
+LowhaOS is a [LineageOS](https://lineageos.org/) fork made for the Fairphone 6 (can be used in any android device). You
 choose a daily budget for social media during setup. When it runs out, those
 apps stop opening — not with a reminder you can swipe away, but enforced by the
 operating system itself.
@@ -10,9 +10,14 @@ operating system itself.
 The limit is binding for seven days. You can always lower it. Raising it has to
 wait.
 
+Parental controls option to simply block social media for under-16s
+
 ---
 
-## Why an OS, and not an app
+## Why an OS?
+
+If you have an iphone and want easy app solution, search for Lowha, it is available here:
+https://apps.apple.com/gb/app/lowha/id6773096638
 
 Every screen-time app has the same hole: it runs at the same privilege as the
 apps it polices. Uninstall it, revoke its permissions, force-stop it, or deny
