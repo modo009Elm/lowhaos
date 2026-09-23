@@ -104,7 +104,9 @@ roadmap's first priority.
 
 ## Install
 
-Prebuilt releases are on the [releases page](../../releases). Then follow
+No prebuilt images are published here — LowhaOS binaries necessarily embed
+proprietary Fairphone and Qualcomm firmware, which is not ours to redistribute.
+Build your own from **[docs/build.md](docs/build.md)**, then flash it following
 **[docs/flashing.md](docs/flashing.md)**.
 
 Requires a Fairphone 6 with an unlocked bootloader. Flashing erases the device.
