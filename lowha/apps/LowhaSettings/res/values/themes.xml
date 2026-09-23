@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+         Inherits the platform Settings theme so the screen matches the rest of
+         Settings rather than announcing itself as a bolt-on.
+    -->
+    <style name="Theme.Lowha.Settings" parent="@android:style/Theme.DeviceDefault.Settings" />
+</resources>

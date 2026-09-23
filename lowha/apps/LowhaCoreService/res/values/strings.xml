@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LowhaOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">LowhaOS Core</string>
+
+    <!--
+         Shown by the framework in the suspension dialog.
+
+         Tone matters here. The user set this limit themselves, and they are
+         meeting it at a moment when they wanted to do something else. The copy
+         states the fact and when it lifts. It does not congratulate them
+         (an earlier draft said "Great discipline!", which reads as smug at
+         precisely the wrong moment) and it does not scold.
+    -->
+    <string name="suspend_title">Daily limit reached</string>
+    <string name="suspend_message">You\'ve used your social media time for today. Your time resets at midnight.</string>
+    <string name="suspend_button">LowhaOS settings</string>
+</resources>

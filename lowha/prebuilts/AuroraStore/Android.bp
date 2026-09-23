@@ -1,0 +1,46 @@
+// Copyright (C) 2026 The LowhaOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+// Aurora Store -- an open-source Google Play client, shipped so the device has
+// a usable app source without Google Play Services.
+//
+// Upstream: https://gitlab.com/AuroraOSS/AuroraStore  (GPL-3.0)
+// The APK is NOT vendored in this repository; see lowha/prebuilts/README.md.
+
+android_app_certificate {
+    name: "lowha_preload",
+    // Points at a key pair you generate yourself. See docs/build.md.
+    certificate: "vendor/lowhaos/security/lowha_preload",
+}
+
+android_app_import {
+    name: "AuroraStore",
+    apk: "AuroraStore.apk",
+
+    // Re-signed with a dedicated Lowha key rather than the platform key.
+    //
+    // The platform key is the most powerful credential on the device. A
+    // third-party binary we do not build should not carry it: anything signed
+    // with it can share the system UID. A dedicated key grants exactly the
+    // privilege Aurora needs and nothing else.
+    //
+    // NOTE the leading colon. `certificate: "lowha_preload"` is interpreted as
+    // a path, not a module reference, and fails to resolve
+    // (build/soong/java/app.go, SrcIsModule).
+    certificate: ":lowha_preload",
+
+    privileged: true,
+
+    // Aurora installs packages, which needs INSTALL_PACKAGES -- a
+    // signature|privileged permission. It must therefore be allowlisted on the
+    // same partition it is installed to. See vendor-config/privapp-permissions-lowha.xml.
+    system_ext_specific: true,
+
+    // Declared rather than silenced. Soong verifies that every shared library
+    // an APK references is available; the honest fix is to declare the
+    // optional ones, not to disable the check.
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+}

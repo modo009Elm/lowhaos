@@ -1,0 +1,56 @@
+LowhaOS
+Copyright (C) 2026 The LowhaOS Project
+
+This product includes software developed by The LowhaOS Project, licensed
+under the Apache License, Version 2.0. See LICENSE.
+
+================================================================================
+Third-party components
+================================================================================
+
+LowhaOS is a derivative of LineageOS, which is itself derived from the Android
+Open Source Project. Original copyrights and licences are retained.
+
+--------------------------------------------------------------------------------
+LineageOS  -  https://github.com/LineageOS
+Copyright (C) The LineageOS Project
+Licensed under the Apache License, Version 2.0.
+
+The Android Open Source Project  -  https://source.android.com
+Copyright (C) The Android Open Source Project
+Licensed under the Apache License, Version 2.0.
+
+Patches in patches/ apply to files originating in the above projects. Those
+files remain under their original licences and copyrights.
+
+--------------------------------------------------------------------------------
+Lightning Browser  -  https://github.com/anthonycr/Lightning-Browser
+Copyright (C) Anthony Restaino
+Licensed under the Mozilla Public License, Version 2.0.
+
+Lowha Browser is derived from Lightning Browser. The MPL is a file-level
+copyleft licence: files originating in Lightning Browser remain under MPL-2.0
+whether or not they have been modified, and modifications to those files must
+be made available under the same licence. A copy of the MPL 2.0 is distributed
+with the browser source.
+
+--------------------------------------------------------------------------------
+Aurora Store  -  https://gitlab.com/AuroraOSS/AuroraStore
+Copyright (C) Rahul Kumar Patel and contributors
+Licensed under the GNU General Public License, Version 3.0.
+
+Aurora Store is included as an unmodified prebuilt binary and is NOT
+redistributed in this repository. This repository contains only the Soong
+module definition describing how to integrate it. Obtain the APK from the
+upstream project.
+
+================================================================================
+Not included
+================================================================================
+
+Proprietary vendor firmware and hardware-support binaries for the Fairphone 6
+and its Qualcomm chipset are NOT distributed in this repository, in any form.
+They remain the property of their respective owners. Extract them from a device
+you own, using the standard extraction tooling in the device tree.
+
+Signing keys are not distributed. Generate your own; see docs/build.md.

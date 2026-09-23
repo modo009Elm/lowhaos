@@ -1,0 +1,36 @@
+// Copyright (C) 2026 The LowhaOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+android_app_import {
+    name: "LowhaBrowser",
+    apk: "LowhaBrowser.apk",
+
+    // Lowha Browser REPLACES the stock browsers.
+    //
+    // This is the real AOSP mechanism, and it is what Jelly itself uses to
+    // displace Browser2 (packages/apps/Jelly/app/Android.bp). PRODUCT_DEL_PACKAGES,
+    // used here previously, does not exist in this build system: it was a
+    // silent no-op and Jelly shipped in two consecutive images while the build
+    // stayed green.
+    overrides: [
+        "Jelly",
+        "Browser2",
+    ],
+
+    // Keep the APK signature as-is.
+    presigned: true,
+
+    // Required for a presigned prebuilt targeting SDK >= 30: the APK carries an
+    // APK Signature Scheme v2 signature covering the whole archive, so Soong
+    // must install it byte-for-byte rather than repacking it. Without this the
+    // repack invalidates the signature and the package will not install.
+    preprocessed: true,
+
+    // DELIBERATELY NOT privileged.
+    //
+    // Verified with `aapt2 dump permissions`: this APK requests only normal and
+    // runtime permissions. It asks for no signature|privileged permission, so
+    // priv-app placement would grant it nothing while adding an allowlist file
+    // that has to be kept in sync on the same partition.
+    system_ext_specific: true,
+}

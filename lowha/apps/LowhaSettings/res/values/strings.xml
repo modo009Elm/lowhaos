@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LowhaOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="lowha_settings_title">LowhaOS Protection</string>
+
+    <string name="limit_section">Daily time limit</string>
+    <string name="limit_off">Off</string>
+    <string name="limit_one_minute">1 minute</string>
+    <string name="limit_minutes">%1$d minutes</string>
+
+    <string name="apps_title">Daily time limit apps</string>
+    <string name="apps_summary">Choose which apps share the daily budget</string>
+    <string name="add_app">Add an app</string>
+    <string name="picker_title">Add to daily limit</string>
+
+    <string name="window_open">Settings can be changed now</string>
+    <string name="window_closed">Your limit is locked in. You can lower it at any time.</string>
+
+    <string name="confirm_save">Save new limit</string>
+
+    <string name="confirm_lower_title">Lower your daily limit?</string>
+    <!--
+         Says the quiet part out loud. Setting a limit below what you have
+         already used today blocks the apps immediately, until midnight, and
+         the limit itself cannot be raised again for a week.
+    -->
+    <string name="confirm_lower_message">Your limit will be set to %1$s.\n\nIf you\'ve already used more than that today, your apps will be blocked straight away and will stay blocked until midnight.\n\nYou won\'t be able to raise this limit for 7 days.</string>
+
+    <string name="confirm_raise_title">Raise your daily limit?</string>
+    <string name="confirm_raise_message">Your limit will be set to %1$s.\n\nThis starts a new 7-day commitment. You won\'t be able to raise it again until that period ends.</string>
+
+    <string name="refused_title">Limit is locked</string>
+    <string name="refused_message">You can\'t raise your limit while your commitment is active. You can lower it at any time.</string>
+</resources>

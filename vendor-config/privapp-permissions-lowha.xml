@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LowhaOS Project
+     SPDX-License-Identifier: Apache-2.0
+
+     Privileged permission allowlist for LowhaOS.
+
+     CRITICAL: this file must be installed to the SAME PARTITION as the app it
+     describes. A privileged app on /system/priv-app with its allowlist on
+     system_ext does not produce a warning. SystemServer aborts during
+     startup and the device boot-loops.
+
+     Install to: $(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/
+
+     LowhaCoreService is intentionally absent: it runs as android.uid.system,
+     which exempts it from the allowlist entirely.
+-->
+<permissions>
+    <privapp-permissions package="com.aurora.store">
+        <permission name="android.permission.INSTALL_PACKAGES" />
+        <permission name="android.permission.DELETE_PACKAGES" />
+    </privapp-permissions>
+</permissions>

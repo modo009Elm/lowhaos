@@ -1,0 +1,25 @@
+# Copyright (C) 2026 The LowhaOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# SELinux policy for LowhaCoreService.
+#
+# This file is deliberately minimal. An earlier version declared types for
+# apps it merely talked TO (settings_app, lowha_settings_app) rather than types
+# it owned. Those types did not exist, and the policy compiler failed the whole
+# build with an error that read as if our own domain were undefined.
+#
+# Rule of thumb applied here: declare the domain you own; use attributes the
+# platform already defines for everything else.
+
+type lowha_core_app, domain;
+
+# LowhaCoreService runs with the system UID and the platform key.
+app_domain(lowha_core_app)
+system_app_domain(lowha_core_app)
+
+# Read usage statistics (the daily budget) and talk to PackageManager
+# (suspension). Both are ordinary system_server binder calls.
+binder_call(lowha_core_app, system_server)
+
+# Persist limit and app lists in Settings.System.
+allow lowha_core_app settings_service:service_manager find;

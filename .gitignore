@@ -1,0 +1,28 @@
+# Signing keys - NEVER commit these
+*.pk8
+*.x509.pem
+*.jks
+*.keystore
+security/
+
+# Prebuilt binaries are fetched, not vendored (see lowha/prebuilts/README.md)
+*.apk
+*.img
+*.zip
+
+# Build output
+out/
+*.o
+*.odex
+*.vdex
+
+# Editors / OS
+.idea/
+*.iml
+.DS_Store
+*~
+.vscode/
+
+# Python
+__pycache__/
+*.pyc

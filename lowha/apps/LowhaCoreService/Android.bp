@@ -1,0 +1,30 @@
+// Copyright (C) 2026 The LowhaOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+android_app {
+    name: "LowhaCoreService",
+
+    srcs: [
+        "src/**/*.kt",
+        "src/app/lowha/core/ILowhaCoreService.aidl",
+    ],
+    resource_dirs: ["res"],
+
+    // Platform-signed and running as the system UID. Both are required:
+    // SUSPEND_APPS is signature|role|verifier, so nothing less will do.
+    certificate: "platform",
+    privileged: true,
+    platform_apis: true,
+
+    // setPackagesSuspended() and SuspendDialogInfo are @SystemApi, so this
+    // module must build against the hidden API surface.
+    sdk_version: "",
+
+    static_libs: [
+        "androidx.annotation_annotation",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+}

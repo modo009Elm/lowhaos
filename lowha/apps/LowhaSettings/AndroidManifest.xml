@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LowhaOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.lowha.settings">
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:label="@string/lowha_settings_title"
+        android:icon="@drawable/ic_lowha_shield"
+        android:theme="@style/Theme.Lowha.Settings">
+
+        <activity
+            android:name=".LowhaSettingsActivity"
+            android:exported="true"
+            android:label="@string/lowha_settings_title">
+
+            <!--
+                 Injecting a tile into the Settings homepage needs THREE things
+                 that are easy to get wrong:
+
+                 1. action IA_SETTINGS                       - declares it a tile
+                 2. category DEFAULT                         - without it the tile
+                    is silently never shown. This was the actual cause of an
+                    "invisible tile" that looked like a signing problem.
+                 3. the meta-data below                      - without `category`
+                    the tile lands at the very bottom of the page unstyled, and
+                    without `icon` it renders blank.
+            -->
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_lowha_shield" />
+            <meta-data
+                android:name="com.android.settings.icon_tintable"
+                android:value="true" />
+            <!-- Negative order sorts the tile toward the top of the page. -->
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-1000" />
+        </activity>
+
+        <activity
+            android:name=".LowhaAppsActivity"
+            android:exported="false"
+            android:label="@string/apps_title" />
+    </application>
+</manifest>
