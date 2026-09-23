@@ -2,6 +2,8 @@
 
 **Open-Source OS for android phones which limits/blocks social media and blocks all adult and gambling content/apps**
 
+**Last update 23.09.2026 Feel free to download and commit updates**
+
 LowhaOS is a [LineageOS](https://lineageos.org/) fork made for the Fairphone 6 (can be used in any android device). You
 choose a daily budget for social media during setup. When it runs out, those
 apps stop opening — not with a reminder you can swipe away, but enforced by the
